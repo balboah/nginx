@@ -21,8 +21,12 @@ VOLUME /var/log/nginx
 # Set working directory.
 WORKDIR /etc/nginx
 
+# Add wrapper shell for updating the upstream with environment variable contents
+ADD nginx.sh /usr/sbin/nginx.sh
+RUN chmod a+x /usr/sbin/nginx.sh
+
 # Expose ports.
 EXPOSE 80
 
 # Define default command.
-ENTRYPOINT ["nginx"]
+CMD ["nginx.sh"]
