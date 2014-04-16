@@ -27,6 +27,7 @@ RUN chmod a+x /usr/sbin/nginx.sh
 
 # Expose ports.
 EXPOSE 80
+EXPOSE 443
 
 # Define default command.
 CMD ["nginx.sh"]
